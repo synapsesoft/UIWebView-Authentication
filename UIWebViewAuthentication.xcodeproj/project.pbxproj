@@ -11,10 +11,10 @@
 		07C970D417C211E200D8AF3B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970D317C211E200D8AF3B /* SenTestingKit.framework */; };
 		07C970D717C211E200D8AF3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970C417C211E200D8AF3B /* Foundation.framework */; };
 		07C970DA17C211E200D8AF3B /* libUIWebViewAuthentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970C117C211E200D8AF3B /* libUIWebViewAuthentication.a */; };
-		07C970E317C211E200D8AF3B /* UIWebViewAuthenticationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970E217C211E200D8AF3B /* UIWebViewAuthenticationTests.m */; };
+		07C970E317C211E200D8AF3B /* UWAHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970E217C211E200D8AF3B /* UWAHandlerTests.m */; };
 		07C970EF17C2126400D8AF3B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970EE17C2126400D8AF3B /* libz.dylib */; };
 		07C970F117C2126A00D8AF3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970F017C2126A00D8AF3B /* CFNetwork.framework */; };
-		07C970F417C2135700D8AF3B /* UWAInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970F317C2135700D8AF3B /* UWAInjector.m */; };
+		07C970F417C2135700D8AF3B /* UWAHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970F317C2135700D8AF3B /* UWAHandler.m */; };
 		07C9710617C2162600D8AF3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C9710517C2162600D8AF3B /* UIKit.framework */; };
 		07C9710717C2162600D8AF3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970C417C211E200D8AF3B /* Foundation.framework */; };
 		07C9710917C2162600D8AF3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C9710817C2162600D8AF3B /* CoreGraphics.framework */; };
@@ -25,9 +25,8 @@
 		07C9711B17C2162600D8AF3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C9711A17C2162600D8AF3B /* Default-568h@2x.png */; };
 		07C9712117C2164500D8AF3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970F017C2126A00D8AF3B /* CFNetwork.framework */; };
 		07C9712217C2164500D8AF3B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970EE17C2126400D8AF3B /* libz.dylib */; };
-		07C9712517C2184200D8AF3B /* UWAInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970F317C2135700D8AF3B /* UWAInjector.m */; };
+		07C9712517C2184200D8AF3B /* UWAHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C970F317C2135700D8AF3B /* UWAHandler.m */; };
 		07C9712C17C21CB800D8AF3B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9712A17C21CB800D8AF3B /* RootViewController.m */; };
-		07C9712D17C21CB800D8AF3B /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C9712B17C21CB800D8AF3B /* RootViewController.xib */; };
 		07C9713F17C22B7200D8AF3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07C9714117C22B7200D8AF3B /* Localizable.strings */; };
 		07C9714B17C22DCB00D8AF3B /* NSData+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9714517C22DCB00D8AF3B /* NSData+Compress.m */; };
 		07C9714C17C22DCB00D8AF3B /* NSData+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9714517C22DCB00D8AF3B /* NSData+Compress.m */; };
@@ -38,6 +37,9 @@
 		07C9718417C2384700D8AF3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C9710517C2162600D8AF3B /* UIKit.framework */; };
 		07C9718517C238CE00D8AF3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C970F017C2126A00D8AF3B /* CFNetwork.framework */; };
 		07C9718617C238DD00D8AF3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C9710517C2162600D8AF3B /* UIKit.framework */; };
+		07C9718917C2F7C000D8AF3B /* UWAWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9718817C2F7C000D8AF3B /* UWAWebView.m */; };
+		07C9718A17C2FA9300D8AF3B /* UWAWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9718817C2F7C000D8AF3B /* UWAWebView.m */; };
+		07C9718C17C2FF3C00D8AF3B /* UWAWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9718B17C2FF3C00D8AF3B /* UWAWebViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,11 +71,11 @@
 		07C970D217C211E200D8AF3B /* UIWebViewAuthenticationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIWebViewAuthenticationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C970D317C211E200D8AF3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		07C970DD17C211E200D8AF3B /* UIWebViewAuthenticationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIWebViewAuthenticationTests-Info.plist"; sourceTree = "<group>"; };
-		07C970E217C211E200D8AF3B /* UIWebViewAuthenticationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebViewAuthenticationTests.m; sourceTree = "<group>"; };
+		07C970E217C211E200D8AF3B /* UWAHandlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UWAHandlerTests.m; sourceTree = "<group>"; };
 		07C970EE17C2126400D8AF3B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		07C970F017C2126A00D8AF3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		07C970F217C2135700D8AF3B /* UWAInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWAInjector.h; sourceTree = "<group>"; };
-		07C970F317C2135700D8AF3B /* UWAInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWAInjector.m; sourceTree = "<group>"; };
+		07C970F217C2135700D8AF3B /* UWAHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWAHandler.h; sourceTree = "<group>"; };
+		07C970F317C2135700D8AF3B /* UWAHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWAHandler.m; sourceTree = "<group>"; };
 		07C9710417C2162600D8AF3B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C9710517C2162600D8AF3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07C9710817C2162600D8AF3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,9 +89,8 @@
 		07C9711A17C2162600D8AF3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		07C9712917C21CB800D8AF3B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		07C9712A17C21CB800D8AF3B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		07C9712B17C21CB800D8AF3B /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		07C9714017C22B7200D8AF3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		07C9714217C22B8200D8AF3B /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		07C9714017C22B7200D8AF3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		07C9714217C22B8200D8AF3B /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07C9714417C22DCB00D8AF3B /* NSData+Compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Compress.h"; sourceTree = "<group>"; };
 		07C9714517C22DCB00D8AF3B /* NSData+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Compress.m"; sourceTree = "<group>"; };
 		07C9714617C22DCB00D8AF3B /* SGHTTPAuthenticationChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHTTPAuthenticationChallenge.h; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		07C9714817C22DCB00D8AF3B /* SGHTTPURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHTTPURLProtocol.h; sourceTree = "<group>"; };
 		07C9714917C22DCB00D8AF3B /* SGHTTPURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHTTPURLProtocol.m; sourceTree = "<group>"; };
 		07C9714A17C22DCB00D8AF3B /* SGURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGURLProtocol.h; sourceTree = "<group>"; };
+		07C9718717C2F7C000D8AF3B /* UWAWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWAWebView.h; sourceTree = "<group>"; };
+		07C9718817C2F7C000D8AF3B /* UWAWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWAWebView.m; sourceTree = "<group>"; };
+		07C9718B17C2FF3C00D8AF3B /* UWAWebViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWAWebViewTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				07C970C617C211E200D8AF3B /* UIWebViewAuthentication */,
+				07C970C717C211E200D8AF3B /* Supporting Files */,
 				07C970DB17C211E200D8AF3B /* UIWebViewAuthenticationTests */,
 				07C9710A17C2162600D8AF3B /* Example */,
 				07C970C317C211E200D8AF3B /* Frameworks */,
@@ -176,9 +181,10 @@
 		07C970C617C211E200D8AF3B /* UIWebViewAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				07C970F217C2135700D8AF3B /* UWAInjector.h */,
-				07C970F317C2135700D8AF3B /* UWAInjector.m */,
-				07C970C717C211E200D8AF3B /* Supporting Files */,
+				07C970F217C2135700D8AF3B /* UWAHandler.h */,
+				07C970F317C2135700D8AF3B /* UWAHandler.m */,
+				07C9718717C2F7C000D8AF3B /* UWAWebView.h */,
+				07C9718817C2F7C000D8AF3B /* UWAWebView.m */,
 			);
 			path = UIWebViewAuthentication;
 			sourceTree = "<group>";
@@ -189,12 +195,14 @@
 				07C970C817C211E200D8AF3B /* UIWebViewAuthentication-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = UIWebViewAuthentication;
 			sourceTree = "<group>";
 		};
 		07C970DB17C211E200D8AF3B /* UIWebViewAuthenticationTests */ = {
 			isa = PBXGroup;
 			children = (
-				07C970E217C211E200D8AF3B /* UIWebViewAuthenticationTests.m */,
+				07C9718B17C2FF3C00D8AF3B /* UWAWebViewTests.m */,
+				07C970E217C211E200D8AF3B /* UWAHandlerTests.m */,
 				07C970DC17C211E200D8AF3B /* Supporting Files */,
 			);
 			path = UIWebViewAuthenticationTests;
@@ -215,7 +223,6 @@
 				07C9711417C2162600D8AF3B /* AppDelegate.m */,
 				07C9712917C21CB800D8AF3B /* RootViewController.h */,
 				07C9712A17C21CB800D8AF3B /* RootViewController.m */,
-				07C9712B17C21CB800D8AF3B /* RootViewController.xib */,
 				07C9710B17C2162600D8AF3B /* Supporting Files */,
 			);
 			path = Example;
@@ -350,7 +357,6 @@
 				07C9711717C2162600D8AF3B /* Default.png in Resources */,
 				07C9711917C2162600D8AF3B /* Default@2x.png in Resources */,
 				07C9711B17C2162600D8AF3B /* Default-568h@2x.png in Resources */,
-				07C9712D17C21CB800D8AF3B /* RootViewController.xib in Resources */,
 				07C9713F17C22B7200D8AF3B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,10 +384,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C970F417C2135700D8AF3B /* UWAInjector.m in Sources */,
 				07C9714B17C22DCB00D8AF3B /* NSData+Compress.m in Sources */,
 				07C9714D17C22DCB00D8AF3B /* SGHTTPAuthenticationChallenge.m in Sources */,
 				07C9714F17C22DCB00D8AF3B /* SGHTTPURLProtocol.m in Sources */,
+				07C970F417C2135700D8AF3B /* UWAHandler.m in Sources */,
+				07C9718917C2F7C000D8AF3B /* UWAWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +396,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C970E317C211E200D8AF3B /* UIWebViewAuthenticationTests.m in Sources */,
+				07C970E317C211E200D8AF3B /* UWAHandlerTests.m in Sources */,
+				07C9718C17C2FF3C00D8AF3B /* UWAWebViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +407,8 @@
 			files = (
 				07C9711117C2162600D8AF3B /* main.m in Sources */,
 				07C9711517C2162600D8AF3B /* AppDelegate.m in Sources */,
-				07C9712517C2184200D8AF3B /* UWAInjector.m in Sources */,
+				07C9712517C2184200D8AF3B /* UWAHandler.m in Sources */,
+				07C9718A17C2FA9300D8AF3B /* UWAWebView.m in Sources */,
 				07C9712C17C21CB800D8AF3B /* RootViewController.m in Sources */,
 				07C9714C17C22DCB00D8AF3B /* NSData+Compress.m in Sources */,
 				07C9714E17C22DCB00D8AF3B /* SGHTTPAuthenticationChallenge.m in Sources */,
@@ -510,6 +519,7 @@
 		07C970EA17C211E200D8AF3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -518,6 +528,7 @@
 				GCC_PREFIX_HEADER = "UIWebViewAuthentication/UIWebViewAuthentication-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewAuthenticationTests/UIWebViewAuthenticationTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -525,6 +536,7 @@
 		07C970EB17C211E200D8AF3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -533,6 +545,7 @@
 				GCC_PREFIX_HEADER = "UIWebViewAuthentication/UIWebViewAuthentication-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewAuthenticationTests/UIWebViewAuthenticationTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

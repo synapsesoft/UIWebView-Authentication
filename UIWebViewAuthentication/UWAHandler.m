@@ -5,17 +5,17 @@
 //  Copyright (c) 2013 Synapsesoft Inc. All rights reserved.
 //
 
-#import "UWAInjector.h"
+#import "UWAHandler.h"
 
 #import <UIKit/UIKit.h>
 #import "SGURLProtocol.h"
 
-@interface UWAInjector() <SGHTTPAuthDelegate>
+@interface UWAHandler() <SGHTTPAuthDelegate>
 @property(nonatomic) UIWebView* webView;
 @property(nonatomic) NSURLAuthenticationChallenge* authenticationChallenge;
 @end
 
-@implementation UWAInjector
+@implementation UWAHandler
 
 #pragma mark - public
 

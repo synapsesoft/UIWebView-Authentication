@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @class UIWebView;
-@interface UWAInjector : NSObject
+@interface UWAHandler : NSObject
 @property (nonatomic) NSURLCredentialPersistence persistence;
 - (void)bindWebView:(UIWebView *)webView;
 - (void)cleanup;

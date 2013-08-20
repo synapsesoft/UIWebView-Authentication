@@ -7,23 +7,26 @@
 
 #import "RootViewController.h"
 
-#import "UWAInjector.h"
+#import "UWAWebView.h"
 
 @interface RootViewController ()
-@property(nonatomic, weak) IBOutlet UIWebView* webView;
-@property(nonatomic) UWAInjector* injector;
+@property(nonatomic) UWAWebView* webView;
 @end
 
 @implementation RootViewController
 
+- (void)loadView
+{
+  self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
-  self.injector = [UWAInjector new];
-  [self.injector bindWebView:self.webView];
   
-  self.injector.persistence = NSURLCredentialPersistenceForSession;
+  self.webView = [[UWAWebView alloc] initWithFrame:self.view.frame];
+  //self.webView.authentication.persistence = NSURLCredentialPersistenceForSession;
+  [self.view addSubview:self.webView];
   
   NSString* url = @"http://www.httpwatch.com/httpgallery/authentication/authenticatedimage/default.aspx";
   NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
