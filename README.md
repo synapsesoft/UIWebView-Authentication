@@ -1,9 +1,9 @@
 UIWebViewAuthentication
 =======================
 
-![https://qiita-image-store.s3.amazonaws.com/0/28357/01453073-0f26-e013-444d-e3e55525c25c.png]()
-
 Basic and Digest Access Authentication support for iOS UIWebView.
+
+![Screenshot](https://qiita-image-store.s3.amazonaws.com/0/28357/01453073-0f26-e013-444d-e3e55525c25c.png)
 
 ```objc```
 // #import <UIWebViewAuthentication/UWAWebView.h>
