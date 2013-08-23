@@ -11,7 +11,7 @@
 #import "SGURLProtocol.h"
 
 @interface UWAHandler() <SGHTTPAuthDelegate>
-@property(nonatomic) UIWebView* webView;
+@property(nonatomic) UIAlertView* alertView;
 @property(nonatomic) NSURLAuthenticationChallenge* authenticationChallenge;
 @property(nonatomic) NSURLCredential* challengedCredential;
 @end
@@ -24,6 +24,11 @@
 {
   self = [super init];
   if(self){
+    _alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentication Required", nil)
+                                            message:@""
+                                           delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                  otherButtonTitles:NSLocalizedString(@"Log In", nil), nil];
     _persistence = NSURLCredentialPersistencePermanent;
     [SGHTTPURLProtocol registerProtocol];
     [SGHTTPURLProtocol setAuthDelegate:self];
@@ -35,7 +40,6 @@
 {
   [SGHTTPURLProtocol unregisterProtocol];
   [SGHTTPURLProtocol setAuthDelegate:nil];
-  self.webView = nil;
 }
 
 - (void)dealloc
@@ -72,22 +76,27 @@
     return;
   }
   
+  if(self.alertView.isVisible){
+    return;
+  }
+  
   self.authenticationChallenge = challenge;
   dispatch_async(dispatch_get_main_queue(), ^{
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentication Required", nil)
-                                                    message:challenge.protectionSpace.host
-                                                   delegate:self
-                                          cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                          otherButtonTitles:NSLocalizedString(@"Log In", nil), nil];
-    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [alert show];
+    self.alertView.message = challenge.protectionSpace.host;
+    self.alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [self.alertView show];
   });
 }
 
 - (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response
 {
-  if(self.challengedCredential && self.authenticationChallenge){
-    [[NSURLCredentialStorage sharedCredentialStorage] setCredential:self.challengedCredential forProtectionSpace:self.authenticationChallenge.protectionSpace];
+  if([self.authenticationChallenge.protectionSpace.protocol isEqualToString:response.URL.scheme] &&
+     [self.authenticationChallenge.protectionSpace.host isEqualToString:response.URL.host]){
+   
+    if(self.challengedCredential && self.authenticationChallenge && [(NSHTTPURLResponse *)response statusCode] == 200){
+      [[NSURLCredentialStorage sharedCredentialStorage] setCredential:self.challengedCredential forProtectionSpace:self.authenticationChallenge.protectionSpace];
+    }
+    
   }
 }
 
