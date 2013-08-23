@@ -29,5 +29,5 @@ http://cocoapods.org/
 # Podfile
 platform :ios, '5.0'
 
-pod 'UIWebViewAuthentication', :git => 'https://github.com/synapsesoft/UIWebViewAuthentication.git'
+pod 'UIWebViewAuthentication', :podspec => 'https://raw.github.com/synapsesoft/UIWebViewAuthentication/master/UIWebViewAuthentication.podspec'
 ```
