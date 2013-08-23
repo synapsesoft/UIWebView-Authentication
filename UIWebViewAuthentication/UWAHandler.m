@@ -58,8 +58,6 @@
   NSString* user = [[alertView textFieldAtIndex:0] text];
   NSString* password = [[alertView textFieldAtIndex:1] text];
   [self setupCredential:user password:password];
-  
-  [self.webView loadRequest:[NSURLRequest requestWithURL:self.authenticationChallenge.failureResponse.URL]];
 }
 
 - (void)setupCredential:(NSString *)user password:(NSString *)password
