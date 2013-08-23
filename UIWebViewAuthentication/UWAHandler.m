@@ -57,6 +57,10 @@
   
   NSString* user = [[alertView textFieldAtIndex:0] text];
   NSString* password = [[alertView textFieldAtIndex:1] text];
+  if(!user.length || !password.length){
+    return;
+  }
+  
   [self setupCredential:user password:password];
 }
 
@@ -93,6 +97,7 @@
   if([self.authenticationChallenge.protectionSpace.protocol isEqualToString:response.URL.scheme] &&
      [self.authenticationChallenge.protectionSpace.host isEqualToString:response.URL.host]){
    
+    DLog(@"%@", [(SGHTTPURLProtocol *)protocol authChallenge]);
     if(self.challengedCredential && self.authenticationChallenge && [(NSHTTPURLResponse *)response statusCode] == 200){
       [[NSURLCredentialStorage sharedCredentialStorage] setCredential:self.challengedCredential forProtectionSpace:self.authenticationChallenge.protectionSpace];
     }
