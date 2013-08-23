@@ -13,6 +13,7 @@
 @interface UWAHandler() <SGHTTPAuthDelegate>
 @property(nonatomic) UIWebView* webView;
 @property(nonatomic) NSURLAuthenticationChallenge* authenticationChallenge;
+@property(nonatomic) NSURLCredential* challengedCredential;
 @end
 
 @implementation UWAHandler
@@ -24,15 +25,10 @@
   self = [super init];
   if(self){
     _persistence = NSURLCredentialPersistencePermanent;
+    [SGHTTPURLProtocol registerProtocol];
+    [SGHTTPURLProtocol setAuthDelegate:self];
   }
   return self;
-}
-
-- (void)bindWebView:(UIWebView *)webView
-{
-  self.webView = webView;
-  [SGHTTPURLProtocol registerProtocol];
-  [SGHTTPURLProtocol setAuthDelegate:self];
 }
 
 - (void)cleanup
@@ -62,15 +58,20 @@
 
 - (void)setupCredential:(NSString *)user password:(NSString *)password
 {
-  NSURLCredential *credential = [NSURLCredential credentialWithUser:user password:password persistence:self.persistence];
-  [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:self.authenticationChallenge.protectionSpace];
-  [self.authenticationChallenge.sender useCredential:credential forAuthenticationChallenge:self.authenticationChallenge];
+  self.challengedCredential = [NSURLCredential credentialWithUser:user password:password persistence:self.persistence];
+  [self.authenticationChallenge.sender useCredential:self.challengedCredential forAuthenticationChallenge:self.authenticationChallenge];
 }
 
 #pragma mark - SGHTTPAuthDelegate
 
 - (void)URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
+{  
+  NSURLCredential* credential = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:challenge.protectionSpace];
+  if(credential){
+    [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+    return;
+  }
+  
   self.authenticationChallenge = challenge;
   dispatch_async(dispatch_get_main_queue(), ^{
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentication Required", nil)
@@ -81,6 +82,13 @@
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     [alert show];
   });
+}
+
+- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response
+{
+  if(self.challengedCredential && self.authenticationChallenge){
+    [[NSURLCredentialStorage sharedCredentialStorage] setCredential:self.challengedCredential forProtectionSpace:self.authenticationChallenge.protectionSpace];
+  }
 }
 
 @end
