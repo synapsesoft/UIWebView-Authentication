@@ -18,7 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-      self.authentication = [UWAHandler new];
+      self.authentication = [[UWAHandler alloc] initWithWebView:self];
     }
     return self;
 }

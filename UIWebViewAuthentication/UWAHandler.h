@@ -10,5 +10,6 @@
 @class UIWebView;
 @interface UWAHandler : NSObject
 @property (nonatomic) NSURLCredentialPersistence persistence;
+- (id)initWithWebView:(UIWebView *)webView;
 - (void)cleanup;
 @end
