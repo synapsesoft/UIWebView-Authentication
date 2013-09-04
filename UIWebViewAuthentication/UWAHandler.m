@@ -59,6 +59,8 @@
     return;
   }
   
+  [self removeCredentialsWithURLURLProtectionSpace:challenge.protectionSpace];
+  
   self.authenticationChallenge = challenge;
   [self showAlert];
 }
@@ -120,5 +122,16 @@
     [bSelf.alertView show];
   });
 }
+
+- (void)removeCredentialsWithURLURLProtectionSpace:(NSURLProtectionSpace *)space
+{
+  NSURLCredentialStorage* credentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
+  NSDictionary* credentials = [credentialStorage credentialsForProtectionSpace:space];
+  for (NSString* key in [credentials allKeys]) {
+    NSURLCredential* cred = [credentials objectForKey:key];
+    [credentialStorage removeCredential:cred forProtectionSpace:space];
+  }
+}
+
 
 @end
