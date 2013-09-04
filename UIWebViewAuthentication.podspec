@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'UIWebViewAuthentication'
   s.homepage     = 'https://github.com/synapsesoft/UIWebViewAuthentication/'
-  s.version      = '1.1.1'
+  s.version      = '1.2.2'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.summary      = 'Basic and Digest Access Authentication support for iOS UIWebView.'
   s.author       = { 'Synapsesoft, Inc.' =>'kusatsugu@synapsesoft.co.jp' }
